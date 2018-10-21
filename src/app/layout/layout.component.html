@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-inverse header">
+  <div class="container-fluid ">
+  <app-topbar></app-topbar>
+  </div>
+</nav>
+
+<div *ngIf="loaderStatus" [ngClass]="{'loader':loaderStatus}">
+</div>
+<!-- <div class="loader">
+</div> -->
+<!-- <div class="container-fluid text-center">     -->
+  <div class="row content" *ngIf="!loaderStatus">
+      <div [ngClass]="[sideNavOpen? 'col-sm-3': 'sidenav']">
+       <app-sidenav></app-sidenav>
+      </div>
+      <div class="text-left" [ngClass]="[sideNavOpen? 'col-sm-8':'main-content']"> 
+          <app-main></app-main>
+      </div>
+      <div class="col-sm-1">
+        <app-ads></app-ads>
+      </div>
+    </div>
+  <!-- </div> -->
+  <div class="row">
+  <footer class="container-fluid text-center">
+      <app-downbar></app-downbar>
+  </footer>
+  </div>
+
+<!-- <button type="button" class="btn btn-primary">Primary</button> -->
+

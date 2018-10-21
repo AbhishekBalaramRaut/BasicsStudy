@@ -1,0 +1,54 @@
+[
+    {
+      "elementId": 1,
+      "elementValue": "Dashboard",
+      "elementParent": null,
+      "elementChild": false,
+      "isCollapsed": true,
+      "routelink": null,
+      "icon": "fa fa-dashboard fa-lg",
+      "children": []
+    },
+    {
+        "elementId": 2,
+        "elementValue": "Route Module",
+        "elementParent": null,
+        "elementChild": true,
+        "isCollapsed": true,
+        "routelink": null,
+        "icon": "fa fa-gift fa-lg",
+        "children": [
+            {
+                "elementId": 3,
+                "elementValue": "Route Home",
+                "elementParent": 2,
+                "elementChild": false,
+                "isCollapsed": true,
+                "routelink": "['/home']",
+                "icon": "fa fa-paper-plane fa-lg",
+                "children": []
+            }
+        ]
+    },
+    {
+        "elementId": 4,
+        "elementValue": "Route Module",
+        "elementParent": null,
+        "elementChild": true,
+        "isCollapsed": true,
+        "routelink": null,
+        "icon": "fa fa-gift fa-lg",
+        "children": [
+            {
+                "elementId": 5,
+                "elementValue": "Route Home",
+                "elementParent": 4,
+                "elementChild": false,
+                "isCollapsed": true,
+                "routelink": "['/home']",
+                "icon": "fa fa-paper-plane fa-lg",
+                "children": []
+            }
+        ]
+    }
+  ]

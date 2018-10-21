@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <h1 class="display-4">Route 2 !</h1>
+  <p class="lead">Route is /home/route2 </p>
+  <hr class="my-4">
+  <p>Below are the options.</p>
+  <div class="row">
+    <div class="col-3">
+      <button type="button" class="btn btn-primary" [routerLink]="['../']">Back</button>
+    </div>
+
+    <div class="btn-group btn-group-toggle col-6" data-toggle="buttons">
+      <label class="btn btn-secondary" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <input type="radio" name="options" id="option1" [routerLink]="['route2A']" autocomplete="off"> route2A
+      </label>
+      <label class="btn btn-secondary" routerLinkActive="active">
+        <input type="radio" name="options" id="option2" [routerLink]="['route2B']" autocomplete="off"> route2B
+      </label>
+      <label class="btn btn-secondary" routerLinkActive="active">
+        <input type="radio" name="options" id="option3" [routerLink]="['route2C']" autocomplete="off"> route2C
+      </label>
+    </div>
+  </div>
+</div>
+<br>
+<router-outlet></router-outlet>

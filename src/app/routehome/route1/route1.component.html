@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <h1 class="display-4">Route 1 !</h1>
+  <p class="lead">Route is /home/route1 </p>
+  <hr class="my-4">
+  <p>Below are the options. And id is {{ id }} </p>
+  <div class="row">
+    <div class="col-3">
+    <button type="button" class="btn btn-primary" [routerLink]="['/home']">Back</button>
+  </div>
+    <!-- <button type="button" class="btn btn-primary btn-sm" [routerLink]="['route1A']">route1A</button>
+      <button type="button" class="btn btn-primary btn-sm" [routerLink]="['route1B']">route1B</button>
+      <button type="button" class="btn btn-primary btn-sm" [routerLink]="['route1C']">route1C</button> -->
+    &nbsp;
+    <div class="btn-group btn-group-toggle col-6" data-toggle="buttons">
+      <label class="btn btn-secondary" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <input type="radio" name="options" id="option1"  [routerLink]="['route1A']" autocomplete="off"> route1A
+      </label>
+      <label class="btn btn-secondary" routerLinkActive="active">
+        <input type="radio" name="options" id="option2"  [routerLink]="['route1B']" autocomplete="off"> route1B
+      </label>
+      <label class="btn btn-secondary" routerLinkActive="active">
+        <input type="radio" name="options" id="option3"  [routerLink]="['route1C']" autocomplete="off"> route1C
+      </label>
+    </div>
+  </div>
+</div>
+<br>
+<router-outlet></router-outlet>
