@@ -19,14 +19,30 @@
         "icon": "fa fa-gift fa-lg",
         "children": [
             {
-                "elementId": 3,
+                "elementId":11,
                 "elementValue": "Route Home",
                 "elementParent": 2,
                 "elementChild": false,
                 "isCollapsed": true,
                 "routelink": "['/home']",
                 "icon": "fa fa-paper-plane fa-lg",
-                "children": []
+                "children": [{
+                                  "elementId": 12,
+                "elementValue": "Route Home",
+                "elementParent":11,
+                "elementChild": false,
+                "isCollapsed": true,
+                "routelink": "['/home']",
+                "icon": "fa fa-paper-plane fa-lg",
+                "children":[]
+                },{
+                                "elementId": 13,
+                "elementValue": "Route Home",
+                "elementParent": 11,
+                "elementChild": false,
+                "isCollapsed": true,
+                "routelink": "['/home']",
+                "icon": "fa fa-paper-plane fa-lg","children":[]}]
             }
         ]
     },

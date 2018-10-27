@@ -16,107 +16,20 @@
   </div>
   <div class="menu-list">
     <ul id="menu-content" class="menu-content collapse out">
-      <li>
-        <a *ngIf="sideNavOpen" [routerLink]="['/dashboard']">
-          <i class="fa fa-dashboard fa-lg"></i> 
-            Dashboard
+      <ng-container *ngFor="let navMenu of sidenav">
+      <li id="{{navMenu.elementId}}" (click)="navMenu.isCollapsed = !navMenu.isCollapsed">
+        <a *ngIf="sideNavOpen" [routerLink]="navMenu.routelink">
+          <i class="{{navMenu.icon}}"></i> 
+            {{navMenu.elementValue}}
+            <span *ngIf="navMenu.children.length > 0" class="fa navigationarrow" [ngClass]="[navMenu.isCollapsed? 'fa-chevron-left':'fa-chevron-down']" [@openClose1]="navMenu.isCollapsed ? 'closed' : 'open'" (click)="navMenu.isCollapsed = !navMenu.isCollapsed" [attr.aria-expanded]="navMenu.isCollapsed" aria-controls="parent-navMenu.elementId"></span>
         </a>
-        <a *ngIf="!sideNavOpen">
-            <i class="fa fa-dashboard fa-lg"></i>
-        </a>
-  
-      </li>
-      <li>
-        <a *ngIf="sideNavOpen" >
-          <i class="fa fa-gift fa-lg"></i> Route Module
-          <span class="arrow" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="products"></span>
-        </a>
-        <a *ngIf="!sideNavOpen">
-            <i class="fa fa-gift fa-lg"></i>
-        </a>
-      </li>
-      <ul class="sub-menu collapse" id="products" [ngbCollapse]="isCollapsed">
-        <li [routerLink]="['/home']">
-          <a>Route 1</a>
-        </li>
-        <li [routerLink]="['/home']">
-          <a>Route 2</a>
-        </li>
-        <li [routerLink]="['/home']">
-          <a>Route 3</a>
-        </li>
-      </ul>
-      <li>
-        <a *ngIf="sideNavOpen" >
-          <i class="fa fa-gift fa-lg"></i> Route Module
-          <span class="arrow" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="products"></span>
-        </a>
-        <a *ngIf="!sideNavOpen">
-            <i class="fa fa-gift fa-lg"></i>
-        </a>
-      </li>
-      <ul class="sub-menu collapse" id="products" [ngbCollapse]="isCollapsed">
-        <li [routerLink]="['/home']">
-          <a>Route 1</a>
-        </li>
-        <li [routerLink]="['/home']">
-          <a>Route 2</a>
-        </li>
-        <li [routerLink]="['/home']">
-          <a>Route 3</a>
-        </li>
-      </ul>
-      <li data-toggle="collapse" data-target="#service" class="collapsed">
-        <a *ngIf="sideNavOpen">
-          <i class="fa fa-globe fa-lg"></i> Services
-          <span class="arrow"></span>
-        </a>
-        <a *ngIf="!sideNavOpen">
-            <i class="fa fa-globe fa-lg"></i>
-        </a>
-      </li>
-      <ul class="sub-menu collapse" id="service">
-        <li>New Service 1</li>
-        <li>New Service 2</li>
-        <li>New Service 3</li>
-      </ul>
 
-
-      <li data-toggle="collapse" data-target="#new" class="collapsed">
-        <a *ngIf="sideNavOpen">
-          <i class="fa fa-car fa-lg"></i> New
-          <span class="arrow"></span>
-        </a>
         <a *ngIf="!sideNavOpen">
-            <i class="fa fa-car fa-lg"></i>
+            <i class="{{navMenu.icon}}"></i>
         </a>
       </li>
-      <ul class="sub-menu collapse" id="new">
-        <li>New New 1</li>
-        <li>New New 2</li>
-        <li>New New 3</li>
-      </ul>
-
-
-      <li>
-        <a *ngIf="sideNavOpen">
-          <i class="fa fa-user fa-lg"></i> Profile
-        </a>
-        <a *ngIf="!sideNavOpen">
-            <i class="fa fa-user fa-lg"></i>
-        </a>
-      </li>
-
-      <li>
-        <a *ngIf="sideNavOpen">
-          <i class="fa fa-users fa-lg"></i> Users
-        </a>
-        <a *ngIf="!sideNavOpen">
-            <i class="fa fa-users fa-lg"></i>
-        </a>
-      </li>
+      <app-child-nav [navMenu]="navMenu" [parentId]="navMenu.elementId" [sideNavOpen]="sideNavOpen"></app-child-nav>
+    </ng-container>
     </ul>
   </div>
-
-
 </div>

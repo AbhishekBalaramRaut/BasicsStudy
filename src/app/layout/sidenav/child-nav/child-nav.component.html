@@ -1,0 +1,11 @@
+<ul class="sub-menu collapse" id="parent-{{parentId}}" [ngbCollapse]="navMenu.isCollapsed">
+<ng-container *ngFor="let child of navMenu.children">
+   
+        <li id="{{child.elementId}}" (click)="child.isCollapsed = !child.isCollapsed" >
+          <a *ngIf="sideNavOpen" [routerLink]="child.routelink">{{child.elementValue}}</a>
+          <span *ngIf="child.children.length > 0" class="fa navigationarrow" [ngClass]="[child.isCollapsed? 'fa-chevron-left':'fa-chevron-down']" [@openClose1]="child.isCollapsed ? 'closed' : 'open'" (click)="child.isCollapsed = !child.isCollapsed" [attr.aria-expanded]="child.isCollapsed" aria-controls="parent-child.elementId"></span>
+        </li>
+
+      <app-child-nav [navMenu]="child" [parentId]="child.elementId" [sideNavOpen]="sideNavOpen"></app-child-nav>
+</ng-container>
+</ul>

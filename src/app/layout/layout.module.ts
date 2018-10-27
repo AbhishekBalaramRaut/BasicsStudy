@@ -15,6 +15,7 @@ import { AdsComponent } from './ads/ads.component';
 import {ProductService} from '../product.service';
 import { NavBarService } from '../shared/services/navBar.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChildNavComponent } from './sidenav/child-nav/child-nav.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SidenavComponent,
     MainComponent,
     AdsComponent,
-    LayoutComponent
+    LayoutComponent,
+    ChildNavComponent
   ],
   imports: [
     NgbModule.forRoot(),

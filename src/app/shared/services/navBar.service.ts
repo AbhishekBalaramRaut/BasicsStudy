@@ -7,17 +7,19 @@ import { Isidenav } from '../../shared/interfaces/sidenav';
 
 @Injectable()
 export class NavBarService {
+    private accountObservable = null;
     private sidenavUrl = './assets/sidenav/sidebar.json';
     isSideNavOpen: Subject<boolean> = new Subject();
 
     constructor(private http: HttpClient) { }
 
     getSidenav(): Observable<Isidenav[]> {
-
-        return this.http.get<Isidenav[]>(this.sidenavUrl).pipe(
+        console.log('before calling navbar service');
+            return this.http.get<Isidenav[]>(this.sidenavUrl).pipe(
             tap(data => console.log('All: ' + JSON.stringify(data))),
             catchError(this.handleError)
         );
+    
     }
 
     private handleError(err: HttpErrorResponse) {
